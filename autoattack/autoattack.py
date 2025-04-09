@@ -227,7 +227,7 @@ class AutoAttack():
                     state.robust_flags = robust_flags
 
                     x_adv[non_robust_lin_idcs] = adv_curr[false_batch].detach().to(x_adv.device)
-                    y_adv[non_robust_lin_idcs] = output[false_batch].detach().to(x_adv.device)
+                    y_adv[non_robust_lin_idcs] = output[false_batch].detach().to(x_adv.device).double()
 
                     if self.verbose:
                         num_non_robust_batch = torch.sum(false_batch)    
