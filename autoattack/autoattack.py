@@ -72,7 +72,7 @@ class AutoAttack():
     def get_logits(self, x):
         if not self.is_tf_model:
             y = self.model(x)
-            print('logits', y)
+            print('logits.max(dim=1)[1]', y.max(dim=1)[1])
             return y
         else:
             return self.model.predict(x)
