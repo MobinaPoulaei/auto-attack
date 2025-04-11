@@ -49,7 +49,7 @@ class AutoAttack():
     
         else:
             from .autopgd_base import APGDAttack
-            self.apgd = APGDAttack(self.model, n_restarts=5, n_iter=100, verbose=False,
+            self.apgd = APGDAttack(self.model, n_restarts=5, n_iter=10, verbose=False,
                 eps=self.epsilon, norm=self.norm, eot_iter=1, rho=.75, seed=self.seed, device=self.device,
                 is_tf_model=True, logger=self.logger)
             
